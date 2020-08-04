@@ -15,6 +15,9 @@ async function run() {
 
   const server = hapi.server({
     port: port,
+    routes: {
+      cors: true
+    }
   });
 
   server.route({
@@ -33,6 +36,10 @@ async function run() {
     handler: async (request, h) => {
       const name = request.payload.name;
       const message = request.payload.message;
+
+      if (typeof name !== "string" || typeof message !== "string") {
+        return { success : false}
+      }
 
       const post = {
         name: name,
