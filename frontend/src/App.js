@@ -45,7 +45,7 @@ function App() {
   return (
     <>
     <div className="mainContainer">
-    <header><h1>LMAObook is a <i>totally legit</i> shitposting network</h1>
+    <header><h1>LMAObook is a <i>totally legit</i> social network</h1>
     <p>A demo social network with a functional backend and database</p>
     </header>
     <section>
@@ -68,7 +68,7 @@ function App() {
           <div className="card">
             <h3>{post.message}</h3>
             
-            <p>🥳&nbsp;&nbsp; {post.name}</p>
+            <p>🥳&nbsp;&nbsp;{post.name}</p>
             </div>
           </>
         )
