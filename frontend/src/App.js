@@ -42,23 +42,41 @@ function App() {
   }
 
 
-
   return (
-    <div>
+    <>
+    <div className="mainContainer">
+    <header><h1>LMAObook is a <i>totally legit</i> shitposting network</h1>
+    <p>A demo social network with a functional backend and database</p>
+    </header>
+    <section>
+    <div className="post">
+    <div className="postForm">
+      <label>Write your shitpost here lmao</label>
+      <textarea rows="4" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+      </div>
+
+      <div className="postForm name">
       <label>Name</label>
       <input value={name} onChange={(e) => setName(e.target.value)}></input>
-      <label>Message</label>
-      <input value={message} onChange={(e) => setMessage(e.target.value)}></input>
+      </div>
+      </div>
       <button onClick={savePost}>Save Post</button>
+      </section>
       {posts.map(post => {
         return (
           <>
-            <p>{post.name}</p>
-            <p>{post.message}</p>
+          <div className="card">
+            <h3>{post.message}</h3>
+            
+            <p>🥳&nbsp;&nbsp; {post.name}</p>
+            </div>
           </>
         )
       })}
+
     </div>
+    
+    </>
   );
 }
 
